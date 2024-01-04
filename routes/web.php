@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\UndanganApp;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('{guest}', UndanganApp::class)->name('invite-link');

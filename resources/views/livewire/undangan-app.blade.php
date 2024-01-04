@@ -1,4 +1,4 @@
-<x-guest-layout>
+<div>
     @include('frontpage.navigation')
     @include('frontpage.hero')
     @include('frontpage.profil')
@@ -89,4 +89,4 @@
     </script>
     @endpush
 
-</x-guest-layout>
+</div>

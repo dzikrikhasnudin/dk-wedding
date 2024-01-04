@@ -5,3 +5,34 @@
 [x-cloak] {
     display: none;
 }
+
+@layer components {
+    .audio-icon-wrapper {
+        width: 2rem;
+        height: 2rem;
+        font-size: 3rem;
+        position: fixed;
+        bottom: 6.3rem;
+        right: 2rem;
+        cursor: pointer;
+        color: white;
+        opacity: 0.5;
+        mix-blend-mode: difference;
+        animation: rotating 4s linear infinite;
+        transform-origin: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 0;
+    }
+
+    @keyframes rotating {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}

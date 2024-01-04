@@ -16,7 +16,7 @@
 
         <div id="guest" class="text-center">
             <p class="italic">Kepada Bapak/Ibu/Saudara/I:</p>
-            <h4 class="text-blue-950 font-cursive mt-2 text-xl">John Doe</h4>
+            <h4 class="text-blue-950 font-serif font-semibold mt-2 text-xl">{{ $guest }}</h4>
             <p class="italic">di Tempat</p>
         </div>
 
