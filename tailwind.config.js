@@ -14,10 +14,11 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'serif': ['"Source Serif 4"', ...defaultTheme.fontFamily.serif],
+                'cursive': ['"Satisfy"', ...defaultTheme.fontFamily.serif],
             },
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [forms, typography, require('tailwindcss-animated')],
 };
