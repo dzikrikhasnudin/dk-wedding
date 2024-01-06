@@ -18,4 +18,9 @@ class Guest extends Model
     protected $fillable = [
         'nama', 'slug'
     ];
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }

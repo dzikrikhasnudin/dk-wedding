@@ -54,11 +54,11 @@
         function enableScroll() {
         window.onscroll = function () { }
         rootElement.style.scrollBehavior = 'smooth';
-        // navigation.classList = 'block';
-        // playAudio();
+        navigation.classList = 'block';
+        playAudio();
     }
 
-    // disableScroll();
+    disableScroll();
     </script>
     <script>
         const audioIconWrapper = document.querySelector('.audio-icon-wrapper');

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\UndanganController;
+use App\Livewire\BukuTamu;
+use App\Livewire\GuestList;
 use App\Livewire\UndanganApp;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontpage.home');
+    return redirect()->route('login');
 });
 
 Route::middleware([
@@ -23,9 +26,10 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+
+
+    Route::get('/dashboard', GuestList::class)->name('dashboard');
+    Route::get('/buku-tamu', BukuTamu::class)->name('buku-tamu');
 });
 
-Route::get('{guest}', UndanganApp::class)->name('invite-link');
+Route::get('to-{guest}', [UndanganController::class, 'index'])->name('invite-link');
