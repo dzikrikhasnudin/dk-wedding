@@ -34,11 +34,14 @@
                                 <th scope="col" class="px-6 py-3">
                                     Nama
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-center ">
+                                <th scope="col" class="px-6 py-3">
                                     Status
                                 </th>
                                 <th scope="col" class="px-6 py-3 hidden lg:block">
                                     Ucapan
+                                </th>
+                                <th scope="col" class="px-6 py-3 ">
+                                    Aksi
                                 </th>
                             </tr>
                         </thead>
@@ -55,13 +58,21 @@
                                 <th scope="row" class="px-6 py-4 w-72 font-medium text-gray-900 whitespace-nowrap">
                                     {{ $data->nama }}
                                 </th>
-                                <td class="px-6 py-4 whitespace-nowrap " id="link-{{ $data->id }}">
+                                <td class="px-3 py-4 whitespace-nowrap" id="link-{{ $data->id }}">
                                     <x-status-kehadiran :status="$data->kehadiran">{{ $data->kehadiran }}
                                     </x-status-kehadiran>
 
                                 </td>
-                                <td class="px-6 py-4  hidden lg:block">
+                                <td class="px-6 py-4 hidden lg:block">
                                     {{ $data->ucapan }}
+                                </td>
+                                <td class="px-6 py-4">
+
+                                    <button wire:click="destroy({{ $data->id }})"
+                                        class="bg-red-600 px-2 py-1 rounded text-white hover:bg-red-700 transition duration-300">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+
                                 </td>
                             </tr>
                             @empty

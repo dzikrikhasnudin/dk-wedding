@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Guest::factory(15)->create();
-        Ucapan::factory(10)->create();
+        // Guest::factory(15)->create();
+        // Ucapan::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Dzikri Khasnudin',

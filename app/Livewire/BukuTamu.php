@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Ucapan;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class BukuTamu extends Component
@@ -32,5 +33,21 @@ class BukuTamu extends Component
         }
 
         return view('livewire.buku-tamu', compact('listUcapan'));
+    }
+
+    public function destroy($id)
+    {
+        $ucapan = Ucapan::find($id);
+        $ucapan->delete();
+
+        $this->dispatch('ucapan-deleted', $ucapan);
+    }
+
+    #[On('ucapan-deleted')]
+    public function updateCounter($ucapan)
+    {
+        $this->hadir = Ucapan::where('kehadiran', 'Hadir')->count();
+        $this->tidakHadir = Ucapan::where('kehadiran', 'Tidak Hadir')->count();
+        $this->belumPasti = Ucapan::where('kehadiran', 'Belum Pasti')->count();
     }
 }
