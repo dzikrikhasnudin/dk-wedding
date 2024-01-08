@@ -11,6 +11,16 @@ class BukuTamu extends Component
     #[Layout('layouts.app')]
 
     public $filter;
+    public $hadir;
+    public $tidakHadir;
+    public $belumPasti;
+
+    public function mount()
+    {
+        $this->hadir = Ucapan::where('kehadiran', 'Hadir')->count();
+        $this->tidakHadir = Ucapan::where('kehadiran', 'Tidak Hadir')->count();
+        $this->belumPasti = Ucapan::where('kehadiran', 'Belum Pasti')->count();
+    }
 
     public function render()
     {

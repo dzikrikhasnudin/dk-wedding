@@ -48,7 +48,7 @@
                                 <th scope="col" class="px-6 py-3">
                                     Nama
                                 </th>
-                                <th scope="col" class="px-6 py-3 hidden lg:block">
+                                <th scope="col" class="px-6 py-3 ">
                                     Tautan
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -73,7 +73,7 @@
                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap hover:underline">
                                     <a href="{{ route('invite-link', $data->slug) }}">{{ $data->nama }}</a>
                                 </th>
-                                <td class="px-6 py-4 hidden lg:block" id="link-{{ $data->id }}">
+                                <td class="px-6 py-4 " id="link-{{ $data->id }}">
                                     <a href="{{ route('invite-link', $data->slug) }}" wire:navigate
                                         class="hover:underline">{{
                                         route('invite-link', $data->slug)

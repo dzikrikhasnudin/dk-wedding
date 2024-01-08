@@ -3,6 +3,11 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Buku Tamu') }}
         </h2>
+        <div class="flex gap-2 text-sm mt-1">
+            <p><span class="font-semibold">{{ $hadir }}</span> Hadir</p>
+            <p><span class="font-semibold">{{ $tidakHadir }}</span> Tidak hadir</p>
+            <p><span class="font-semibold">{{ $belumPasti }}</span> Belum Pasti</p>
+        </div>
     </x-slot>
 
     <div class="py-12">
